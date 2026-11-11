@@ -23,12 +23,16 @@ public class Comercio021 {
         int edad;
         double sueldoBasico;
         int numeroProductos;
+        String nombreComercio;
         
         double productividad;
         double coeficiente = 0.6;
         double bono  = 0;
-        
-        double porcentajeSeguro = 8;
+        /*
+        El valor 8 en double porcentajeSeguro = 8; funciona como un valor por defecto (respaldo).
+        */
+        double porcentajeSeguro = 8; 
+        String region;
         double adicionalSeguro;
         
         double sueldoFinal; 
@@ -45,31 +49,42 @@ public class Comercio021 {
         System.out.println("Ingrese el sueldo básico por favor");
         sueldoBasico = entrada.nextDouble();        
         
+        System.out.println("Ingrese el nombre del comercio por favor");
+        nombreComercio = entrada.nextLine();
+        
         System.out.println("Ingrese el número de productos vendidos "
                 + "por favor");
         numeroProductos = entrada.nextInt();
         
+        System.out.println("Ingrese la región (Sierra, Costa, Oriente, Insular)");
+        region = entrada.nextLine();
+        
         // calcular la productividad
         productividad = numeroProductos * coeficiente;
         
-        if (productividad<=30){
-            bono = 25; // $25
-        }else{
-            if (productividad>30 && productividad<80){
-                bono = 50;
-            }else{
-                if (productividad>=80 && productividad < 200) {
-                    bono = 100;
-                }else{
-                    if(productividad >= 200 && productividad <=500){
-                        bono = 200;
-                    }
-        else {
-            bono = 300
-                }
-            }
+        // Calcular bono según productividad
+        if (productividad <= 30) {
+            bono = 25;
+        } else if (productividad < 80) {
+            bono = 50;
+        } else if (productividad < 200) {
+            bono = 100;
+        } else if (productividad <= 500) {
+            bono = 200;
+        } else {
+            bono = 300;
         }
         
+        // Calcular porcentaje de seguro según la región
+        if (region.equalsIgnoreCase("Sierra")) {
+            porcentajeSeguro = 10;
+        } else if (region.equalsIgnoreCase("Costa")) {
+            porcentajeSeguro = 12;
+        } else if (region.equalsIgnoreCase("Oriente")) {
+            porcentajeSeguro = 15;
+        } else if (region.equalsIgnoreCase("Insular")) {
+            porcentajeSeguro = 20;
+        }
        
         adicionalSeguro = (sueldoBasico * porcentajeSeguro)/100;
         sueldoFinal = adicionalSeguro + bono + sueldoBasico;

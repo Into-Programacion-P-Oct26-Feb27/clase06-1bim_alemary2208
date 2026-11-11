@@ -42,6 +42,9 @@ public class Comercio012 {
         
         System.out.println("Ingrese el nombre del comercio por favor");
         nombreComercio = entrada.nextLine();
+        
+        System.out.println("Ingrese el nombre del comercio por favor");
+        nombreComercio = entrada.nextLine();
 
         System.out.println("Ingrese la edad por favor");
         edad = entrada.nextInt();
