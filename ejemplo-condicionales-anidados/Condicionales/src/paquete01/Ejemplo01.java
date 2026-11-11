@@ -24,7 +24,7 @@ public class Ejemplo01 {
                 + "3. NOT");
         opcion = entrada.nextInt();
         
-        if (opcion >= 0 && opcion <= 3) {
+        if (opcion > 0 && opcion <= 3) {
             if (opcion==1) {
                 System.out.printf("%s\n", "Trabajar con AND");
                 
@@ -44,3 +44,9 @@ public class Ejemplo01 {
     }
 
 }
+/*
+para que salga el mensaje "Trabajar con AND" el usuario debe ingresar 1
+ya que el codigo entiende que si la variable "opcion" es ==1 se debe ejecutar
+ese mensaje ya que este valr esta dentro de los valores que lee la variable que
+serian (opcion >0 && opcion <= 3)
+*/
