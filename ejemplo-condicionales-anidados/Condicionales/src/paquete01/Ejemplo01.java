@@ -24,7 +24,7 @@ public class Ejemplo01 {
                 + "3. NOT");
         opcion = entrada.nextInt();
         
-        if (opcion > 0 && opcion <= 3) {
+        if (opcion >= 0 && opcion <= 3) {
             if (opcion==1) {
                 System.out.printf("%s\n", "Trabajar con AND");
                 
