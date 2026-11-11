@@ -19,6 +19,7 @@ public class Comercio001 {
         entrada.useLocale(Locale.US); // 10,2 / 10.2
 
         String nombre;
+        String nombreComercio;
         String apellido;
         int edad;
         double sueldoBasico;
@@ -35,9 +36,12 @@ public class Comercio001 {
 
         System.out.println("Ingrese el nombre por favor");
         nombre = entrada.nextLine();
-
+        
         System.out.println("Ingrese el apellido por favor");
         apellido = entrada.nextLine();
+        
+        System.out.println("Ingrese el nombre del comercio por favor");
+        nombreComercio = entrada.nextLine();
 
         System.out.println("Ingrese la edad por favor");
         edad = entrada.nextInt();
@@ -57,7 +61,7 @@ public class Comercio001 {
         if (productividad <= 30) {
             bono = 25; // $25
             sueldoFinal = adicionalSeguro + bono + sueldoBasico;
-            System.out.printf("Reporte de Empleado EL GRAN COMERCIO\n\n"
+            System.out.printf("Reporte de Empleado de: \n\n"
                     + "Nombres: %s\n"
                     + "Apellidos: %s\n"
                     + "Edad: %d\n"
@@ -81,7 +85,7 @@ public class Comercio001 {
             if (productividad > 30 && productividad < 80) {
                 bono = 50;
                 sueldoFinal = adicionalSeguro + bono + sueldoBasico;
-                System.out.printf("Reporte de Empleado EL GRAN COMERCIO\n\n"
+                System.out.printf("Reporte de Empleado de:"
                         + "Nombres: %s\n"
                         + "Apellidos: %s\n"
                         + "Edad: %d\n"
@@ -105,7 +109,7 @@ public class Comercio001 {
                 if (productividad >= 80 && productividad < 200) {
                     bono = 100;
                     sueldoFinal = adicionalSeguro + bono + sueldoBasico;
-                    System.out.printf("Reporte de Empleado EL GRAN COMERCIO\n\n"
+                    System.out.printf("Reporte de Empleado de: \n\n"
                             + "Nombres: %s\n"
                             + "Apellidos: %s\n"
                             + "Edad: %d\n"
@@ -126,10 +130,10 @@ public class Comercio001 {
                             sueldoFinal);
 
                 } else {
-                    if (productividad >= 200) {
+                    if (productividad >= 200 && productividad < 500) {
                         bono = 200;
                         sueldoFinal = adicionalSeguro + bono + sueldoBasico;
-                        System.out.printf("Reporte de Empleado EL GRAN COMERCIO\n\n"
+                        System.out.printf("Reporte de Empleado de: \n\n"
                                 + "Nombres: %s\n"
                                 + "Apellidos: %s\n"
                                 + "Edad: %d\n"
@@ -148,12 +152,35 @@ public class Comercio001 {
                                 bono,
                                 adicionalSeguro,
                                 sueldoFinal);
-
+                } else {
+                    if (productividad > 300) {
+                    bono = 300;
+                    sueldoFinal = adicionalSeguro + bono + sueldoBasico;
+                        System.out.printf("Reporte de Empleado de: /n/n"
+                                + "Nombres: %s\n"
+                                + "Apellidos: %s\n"
+                                + "Edad: %d\n"
+                                + "Sueldo: $%.2f\n"
+                                + "Número de productos vendidos: %d\n"
+                                + "\tProductidad: %.2f\n"
+                                + "\tBono: $%.2f\n"
+                                + "Adicional del seguro: $%.2f\n\n"
+                                + "Sueldo final: $%.2f\n",
+                                nombre,
+                                apellido,
+                                edad,
+                                sueldoBasico,
+                                numeroProductos,
+                                productividad,
+                                bono,
+                                adicionalSeguro,
+                                sueldoFinal);  
+                        
+                         }
                     }
                 }
             }
         }
 
     }
-
 }
